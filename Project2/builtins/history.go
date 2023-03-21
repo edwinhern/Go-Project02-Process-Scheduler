@@ -47,7 +47,7 @@ func History(args ...string) error {
 					fmt.Printf("%v %v \n", i+1, history[i])
 				}
 			} else if err == nil { // n is an int but not within range of size of history
-				return fmt.Errorf("%w: expected integer less than or equal to 20", errInvalidArg)
+				return fmt.Errorf("%w: expected integer less than or equal to history list length", errInvalidArg)
 			} else if err != nil { // n is not an int and not a valid history option
 				return fmt.Errorf("%w: expected valid history option", errInvalidArg)
 			}
