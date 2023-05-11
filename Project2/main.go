@@ -93,6 +93,9 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 		return builtins.Hash(args...)
 	case "cat":
 		return builtins.Cat(args...)
+	case "bindkey":
+		return builtins.BindKey(args...)
+		
 	case "exit":
 		exit <- struct{}{}
 		return nil
